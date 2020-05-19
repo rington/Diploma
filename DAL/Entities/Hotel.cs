@@ -18,7 +18,6 @@ namespace DAL.Entities
         public string Address { get; set; }
         public string Description { get; set; }
         public int Rating { get; set; }
-        public IEnumerable<Reservation> Reservations { get; set; }
 
     }
 }

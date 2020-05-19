@@ -58,6 +58,12 @@ namespace BLL.Services
             return _mapper.Map<IEnumerable<Hotel>, IEnumerable<HotelDTO>>(hotels);
         }
 
+        public async Task<IEnumerable<HotelDTO>> GetHotelsByNutrition(int nutritionTypeId)
+        {
+            var hotels = await _uow.Hotels.Find(h => h.NutritionTypeId == nutritionTypeId);
+            return _mapper.Map<IEnumerable<Hotel>, IEnumerable<HotelDTO>>(hotels);
+        }
+
         public async Task<IEnumerable<HotelDTO>> GetHotelsByRating(int rating)
         {
             var hotels = await _uow.Hotels.Find(h => h.Rating == rating);

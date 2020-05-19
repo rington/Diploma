@@ -102,6 +102,16 @@ namespace API
 
             return _mapper.Map<ClientDTO, ClientView>(client);
         }
+
+        [Route("api/hotels/{hotelId:int}/clients")]
+        [HttpGet]
+        public async Task<IEnumerable<ClientView>> GetClientByHotel(int hotelId)
+        {
+            var clients = await _reservationsService.GetClientsByHotel(hotelId);
+
+            return _mapper.Map<IEnumerable<ClientDTO>, IEnumerable<ClientView>>(clients);
+        }
+
         [Route("api/reservations/{reservationId:int}/room")]
         [HttpGet]
         public async Task<RoomView> GetRoomByReservation(int reservationId)

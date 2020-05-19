@@ -60,11 +60,12 @@ namespace BLL.Services
             var client = await _uow.Reservations.GetClientByReservation(reservationId);
             return _mapper.Map<Client, ClientDTO>(client);
         }
-        //public async Task<IEnumerable<ClientDTO>> GetClientsByHotel(int hotelId)
-        //{
-        //    var clients = await _uow.Reservations.GetClientsByHotel(hotelId);
-        //    return _mapper.Map<IEnumerable<Client>, IEnumerable<ClientDTO>>(clients);
-        //}
+
+        public async Task<IEnumerable<ClientDTO>> GetClientsByHotel(int hotelId)
+        {
+            var clients = await _uow.Reservations.GetClientsByHotel(hotelId);
+            return _mapper.Map<IEnumerable<Client>, IEnumerable<ClientDTO>>(clients);
+        }
 
         public async Task<RoomDTO> GetRoomByReservation(int reservationId)
         {

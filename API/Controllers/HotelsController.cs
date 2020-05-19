@@ -102,6 +102,15 @@ namespace API.Controllers
 
             return _mapper.Map<IEnumerable<HotelDTO>,IEnumerable<HotelView>>(hotels);
         }
+
+        [Route("api/hotels/nutritionType/{nutritionTypeId}")]
+        [HttpGet]
+        public async Task<IEnumerable<HotelView>> GetHotelsByNutrition(int nutritionTypeId)
+        {
+            var hotels = await _hotelsService.GetHotelsByNutrition(nutritionTypeId);
+
+            return _mapper.Map<IEnumerable<HotelDTO>, IEnumerable<HotelView>>(hotels);
+        }
         [Route("api/hotels/rating/{rating}")]
         [HttpGet]
         public async Task<IEnumerable<HotelView>> GetHotelByRating(int rating)

@@ -14,7 +14,7 @@ namespace BLL.Interfaces
         bool DeleteReservation(int reservationId);
         Task<IEnumerable<ReservationDTO>> GetReservationsByDate(DateTime bookingDate, DateTime bookingDateEnd);
         Task<ClientDTO> GetClientByReservation(int reservationId);
-        //Task<IEnumerable<ClientDTO>> GetClientsByHotel(int hotelId);
+        Task<IEnumerable<ClientDTO>> GetClientsByHotel(int hotelId);
         Task<RoomDTO> GetRoomByReservation(int reservationId);
         void SaveChanges();
     }

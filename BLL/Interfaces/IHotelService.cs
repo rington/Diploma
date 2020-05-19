@@ -15,6 +15,7 @@ namespace BLL.Interfaces
         Task<HotelDTO> GetHotelByName(string hotelName);
         Task<IEnumerable<HotelDTO>> GetHotelsByCity(string city);
         Task<IEnumerable<HotelDTO>> GetHotelsByRating(int rating);
+        Task<IEnumerable<HotelDTO>> GetHotelsByNutrition(int nutritionTypeId);
         void SaveChanges();
     }
 }

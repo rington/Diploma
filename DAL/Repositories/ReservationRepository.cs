@@ -27,10 +27,10 @@ namespace DAL.Repositories
         {
             return _db.Reservations.Include(r => r.Client).First(r => r.Id == reservationId).Client;
         }
-        //public async Task<IEnumerable<Client>> GetClientsByHotel(int hotelId)
-        //{
-        //    return _db.Reservations.Include(r => r.Client).Include(r => r.Hotel).Where(r => r.HotelId == hotelId).Select(r => r.Client);
-        //}
+        public async Task<IEnumerable<Client>> GetClientsByHotel(int hotelId)
+        {
+            return _db.Reservations.Include(r => r.Client).Include(r => r.Room).Where(r => r.Room.HotelId == hotelId).Select(r => r.Client);
+        }
 
         public async Task<Room> GetRoomByReservation(int reservationId)
         {

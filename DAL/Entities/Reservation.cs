@@ -9,8 +9,6 @@ namespace DAL.Entities
         public Client Client { get; set; }        
         public int RoomId { get; set; }
         public Room Room { get; set; }
-        //public int HotelId { get; set; }
-        //public Hotel Hotel { get; set; }
         public DateTime BookingDate { get; set; }
         public DateTime BookingDateEnd { get; set; }
 
