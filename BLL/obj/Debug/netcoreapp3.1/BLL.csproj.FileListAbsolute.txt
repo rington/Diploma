@@ -1,0 +1,12 @@
+D:\Diploma\DiplomaCore\Diploma\BLL\bin\Debug\netcoreapp3.1\DAL.dll
+D:\Diploma\DiplomaCore\Diploma\BLL\obj\Debug\netcoreapp3.1\BLL.csprojAssemblyReference.cache
+D:\Diploma\DiplomaCore\Diploma\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+D:\Diploma\DiplomaCore\Diploma\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+D:\Diploma\DiplomaCore\Diploma\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
+D:\Diploma\DiplomaCore\Diploma\BLL\bin\Debug\netcoreapp3.1\BLL.dll
+D:\Diploma\DiplomaCore\Diploma\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
+D:\Diploma\DiplomaCore\Diploma\BLL\bin\Debug\netcoreapp3.1\DAL.pdb
+D:\Diploma\DiplomaCore\Diploma\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
+D:\Diploma\DiplomaCore\Diploma\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
+D:\Diploma\DiplomaCore\Diploma\BLL\obj\Debug\netcoreapp3.1\BLL.dll
+D:\Diploma\DiplomaCore\Diploma\BLL\obj\Debug\netcoreapp3.1\BLL.pdb

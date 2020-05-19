@@ -1,0 +1,9 @@
+D:\Diploma\DiplomaCore\Diploma\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+D:\Diploma\DiplomaCore\Diploma\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+D:\Diploma\DiplomaCore\Diploma\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+D:\Diploma\DiplomaCore\Diploma\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+D:\Diploma\DiplomaCore\Diploma\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+D:\Diploma\DiplomaCore\Diploma\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+D:\Diploma\DiplomaCore\Diploma\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+D:\Diploma\DiplomaCore\Diploma\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+D:\Diploma\DiplomaCore\Diploma\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
