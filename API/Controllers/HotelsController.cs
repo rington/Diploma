@@ -4,6 +4,7 @@ using API.Models;
 using AutoMapper;
 using BLL.DTOs;
 using BLL.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -47,6 +48,7 @@ namespace API.Controllers
         }
 
         [Route("api/hotels")]
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Add([FromBody]HotelView hotel)
         {

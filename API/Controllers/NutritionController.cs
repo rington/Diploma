@@ -22,7 +22,7 @@ namespace API.Controllers
             _mapper = mapper;
         }
 
-        [Route("api/nutririonTypes/{id:int}")]
+        [Route("api/nutritionTypes/{id:int}")]
         [HttpGet]
         public async Task<IActionResult> Get(int id)
         {
@@ -33,12 +33,12 @@ namespace API.Controllers
                 return NotFound();
             }
 
-            var nutririonTypeView = _mapper.Map<NutritionTypeDTO, NutritionTypeView>(nutritionType);
+            var nutritionTypeView = _mapper.Map<NutritionTypeDTO, NutritionTypeView>(nutritionType);
 
-            return Ok(nutririonTypeView);
+            return Ok(nutritionTypeView);
         }
 
-        [Route("api/nutririonTypes")]
+        [Route("api/nutritionTypes")]
         [HttpGet]
         public async Task<IEnumerable<NutritionTypeView>> GetAll()
         {
