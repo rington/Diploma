@@ -23,6 +23,10 @@ namespace API.Controllers
             {
                 var user = new User { Email = model.Email, UserName = model.Name };
                 var result = await _userManager.CreateAsync(user, model.Password);
+                if (!result.Succeeded)
+                {
+                    return ValidationProblem();
+                }
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
@@ -46,8 +50,7 @@ namespace API.Controllers
                 {
                     //TODO: Check for sub domain
                     if (!string.IsNullOrEmpty(model.ReturnUrl) /* && Url.IsLocalUrl(model.ReturnUrl)*/)
-                        return Redirect(model.ReturnUrl);
-                    return RedirectToAction("ListAll", "List");
+                        return Redirect(model.ReturnUrl);                    
                 }
 
                 ModelState.AddModelError("", "Wrong login or password");

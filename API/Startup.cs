@@ -9,6 +9,7 @@ using BLL.DIResolver;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -51,12 +52,12 @@ namespace API
 
             services.ConfigureApplicationCookie((options) =>
             {
-                options.Cookie.Path = "/";
-                options.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.None;
-                options.Cookie.Domain = "localhost";
+                //options.Cookie.Path = "/";
+                options.Cookie.SameSite = SameSiteMode.None;
+                //options.Cookie.Domain = "localhost";
                 options.Cookie.HttpOnly = true;
             });
-
+            
             services.AddMvc();
         }
 
@@ -74,7 +75,7 @@ namespace API
             app.UseCors(builder => builder.AllowAnyMethod().AllowAnyHeader().AllowCredentials().WithOrigins("http://localhost:8080"));
             app.UseAuthentication();
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
