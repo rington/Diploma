@@ -39,12 +39,12 @@ namespace API
             services.AddControllers();
             services.AddDIForBLL();
             services.AddSingleton((_) => new AutoMapper.MapperConfiguration(cfg => {
-                cfg.AddProfile<API.Helpers.AutoMapperProfile>();
+                cfg.AddProfile<Helpers.AutoMapperProfile>();
                 cfg.AddProfile<AutoMapperProfile>();
             }).CreateMapper());
             services.AddDbContext<Context>((options) =>
             {
-               options.UseSqlServer(@"Server=WIN-RZAIETS;Database=UserHotelDB2;Trusted_Connection=True;");
+               options.UseSqlServer(@"Server=WIN-RZAIETS;Database=UserHotelDB;Trusted_Connection=True;");
             });
 
             services.AddIdentity<User, IdentityRole>()
@@ -57,7 +57,6 @@ namespace API
                 //options.Cookie.Domain = "localhost";
                 options.Cookie.HttpOnly = true;
             });
-            
             services.AddMvc();
         }
 

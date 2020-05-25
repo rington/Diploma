@@ -15,10 +15,15 @@ namespace API.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+
         [Route("api/account/register")]
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]RegisterModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                return ValidationProblem();
+            }
             if (ModelState.IsValid)
             {
                 var user = new User { Email = model.Email, UserName = model.Name };
@@ -35,11 +40,12 @@ namespace API.Controllers
                 foreach (var error in result.Errors) ModelState.AddModelError(string.Empty, error.Description);
             }
 
+
             return Ok(model);
         }
 
+        [Route("api/account/login")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([FromBody]LoginModel model)
         {
             if (ModelState.IsValid)
@@ -57,6 +63,14 @@ namespace API.Controllers
             }
 
             return Ok(model);
+        }
+
+        [Route("api/account/register/confirm/{email}")]
+        [HttpGet]
+        public async Task<User> GetUserByEmail(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email.ToUpper());
+            return user;
         }
     }
 }
