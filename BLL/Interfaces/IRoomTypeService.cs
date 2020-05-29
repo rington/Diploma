@@ -9,7 +9,7 @@ namespace BLL.Interfaces
     {
         Task<RoomTypeDTO> GetRoomTypeById(int roomTypeId);
         Task<IEnumerable<RoomTypeDTO>> GetAllRoomTypes();
-        Task<IEnumerable<RoomTypeDTO>> GetRoomTypesByPrice(double minPrice, double maxPrice);
+        //Task<IEnumerable<RoomTypeDTO>> GetRoomTypesByPrice(double minPrice, double maxPrice);
         Task AddRoomType(RoomTypeDTO roomType);
         Task UpdateRoomType(RoomTypeDTO roomType);
         bool DeleteRoomType(int roomTypeId);

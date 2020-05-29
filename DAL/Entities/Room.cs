@@ -10,6 +10,7 @@ namespace DAL.Entities
         public int HotelId { get; set; }
         public Hotel Hotel { get; set; }
         public bool IsReserved { get; set; }
+        public double Price { get; set; }
         public IEnumerable<Reservation> Reservations { get; set; }
     }
 }

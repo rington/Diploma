@@ -112,11 +112,57 @@ namespace API.Controllers
 
             return _mapper.Map<IEnumerable<HotelDTO>, IEnumerable<HotelView>>(hotels);
         }
+
         [Route("api/hotels/rating/{rating}")]
         [HttpGet]
         public async Task<IEnumerable<HotelView>> GetHotelByRating(int rating)
         {
             var hotels = await _hotelsService.GetHotelsByRating(rating);
+
+            return _mapper.Map<IEnumerable<HotelDTO>, IEnumerable<HotelView>>(hotels);
+        }
+
+        [Route("api/hotels/roomCleaning/{hasRoomCleaning}")]
+        [HttpGet]
+        public async Task<IEnumerable<HotelView>> GetHotelByRoomCleaning(bool hasRoomCleaning)
+        {
+            var hotels = await _hotelsService.GetHotelsByRoomCleaning(hasRoomCleaning);
+
+            return _mapper.Map<IEnumerable<HotelDTO>, IEnumerable<HotelView>>(hotels);
+        }
+
+        [Route("api/hotels/parking/{hasParking}")]
+        [HttpGet]
+        public async Task<IEnumerable<HotelView>> GetHotelByParking(bool hasParking)
+        {
+            var hotels = await _hotelsService.GetHotelsByParking(hasParking);
+
+            return _mapper.Map<IEnumerable<HotelDTO>, IEnumerable<HotelView>>(hotels);
+        }
+
+        [Route("api/hotels/ratingArray/{rat1}/{rat2}/{rat3}")]
+        [HttpGet]
+        public async Task<IEnumerable<HotelView>> GetHotelsByRatingArray(int rat1, int rat2, int rat3)
+        {
+            var hotels = await _hotelsService.GetHotelsByRatingArray(rat1, rat2, rat3);
+
+            return _mapper.Map<IEnumerable<HotelDTO>, IEnumerable<HotelView>>(hotels);
+        }
+
+        [Route("api/hotels/distance/{dist1}/{dist2}/{dist3}")]
+        [HttpGet]
+        public async Task<IEnumerable<HotelView>> GetHotelsByDistanceArray(double dist1, double dist2, double dist3)
+        {
+            var hotels = await _hotelsService.GetHotelsByDistanceArray(dist1, dist2, dist3);
+
+            return _mapper.Map<IEnumerable<HotelDTO>, IEnumerable<HotelView>>(hotels);
+        }
+        
+        [Route("api/hotels/nutritionArray/{ro}/{bb}/{hb}/{fb}/{ai}")]
+        [HttpGet]
+        public async Task<IEnumerable<HotelView>> GetHotelsByNutritionArray(int ro, int bb, int hb, int fb, int ai)
+        {
+            var hotels = await _hotelsService.GetHotelsByNutritionArray(ro, bb, hb,fb,ai);
 
             return _mapper.Map<IEnumerable<HotelDTO>, IEnumerable<HotelView>>(hotels);
         }

@@ -78,5 +78,52 @@ namespace BLL.Services
         {
             _uow.Dispose();
         }
+
+        public async Task<IEnumerable<HotelDTO>> GetHotelsByRoomCleaning(bool hasRoomCleaning)
+        {
+            var hotels = await _uow.Hotels.Find(h => h.HasRoomCleaning == hasRoomCleaning);
+            return _mapper.Map<IEnumerable<Hotel>, IEnumerable<HotelDTO>>(hotels);
+        }
+
+        public async Task<IEnumerable<HotelDTO>> GetHotelsByParking(bool hasParking)
+        {
+            var hotels = await _uow.Hotels.Find(h => h.HasParking == hasParking);
+            return _mapper.Map<IEnumerable<Hotel>, IEnumerable<HotelDTO>>(hotels);
+        }
+
+        public async Task<IEnumerable<HotelDTO>> GetHotelsByRatingArray(int rat1, int rat2, int rat3)
+        {
+            var hotels = await _uow.Hotels.Find(h => h.Rating == rat1 || h.Rating == rat2 || h.Rating == rat3);
+            return _mapper.Map<IEnumerable<Hotel>, IEnumerable<HotelDTO>>(hotels);
+        }
+
+        public async Task<IEnumerable<HotelDTO>> GetHotelsByDistanceArray(double dist1, double dist2, double dist3)
+        {
+            var hotelsList = new List<Hotel>();
+            IEnumerable<Hotel> hotels = null;
+            if (dist1 != 0)
+            {
+                hotels = await _uow.Hotels.Find(h => h.DistanceToCityCenter < dist1);
+                hotelsList.AddRange(hotels);
+            }
+            if(dist2 != 0)
+            {
+                hotels = await _uow.Hotels.Find(h => h.DistanceToCityCenter >= 1 && h.DistanceToCityCenter <= dist2);
+                hotelsList.AddRange(hotels);
+            }
+            if(dist3 != 0)
+            {
+                hotels = await _uow.Hotels.Find(h => h.DistanceToCityCenter > dist3);
+                hotelsList.AddRange(hotels);
+            }           
+            
+            return _mapper.Map<IEnumerable<Hotel>, IEnumerable<HotelDTO>>(hotelsList);
+        }
+
+        public async Task<IEnumerable<HotelDTO>> GetHotelsByNutritionArray(int ro, int bb, int hb, int fb, int ai)
+        {
+            var hotels = await _uow.Hotels.Find(h => h.NutritionTypeId == ro || h.NutritionTypeId == bb || h.NutritionTypeId == hb || h.NutritionTypeId == fb || h.NutritionTypeId == ai);
+            return _mapper.Map<IEnumerable<Hotel>, IEnumerable<HotelDTO>>(hotels);
+        }
     }
 }

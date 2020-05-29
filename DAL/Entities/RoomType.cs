@@ -9,7 +9,7 @@ namespace DAL.Entities
         public string Name { get; set; }
         [MaxLength(200)]
         public string Description { get; set; }
-        public double Price { get; set; }
+        //public double Price { get; set; }
         public int Capacity { get; set; }
     }
 }

@@ -17,7 +17,12 @@ namespace DAL.Entities
         public string City { get; set; }
         public string Address { get; set; }
         public string Description { get; set; }
+        public bool HasRoomCleaning { get; set; }
+        public bool HasParking { get; set; }
+        public double DistanceToCityCenter { get; set; }
         public int Rating { get; set; }
+        
+
 
     }
 }

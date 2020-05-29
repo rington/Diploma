@@ -44,14 +44,14 @@ namespace API
 
             return _mapper.Map<IEnumerable<RoomTypeDTO>, IEnumerable<RoomTypeView>>(roomTypes);
         }
-        [Route("api/roomTypes/price/{minPrice}/{maxPrice}")]
-        [HttpGet]
-        public async Task<IEnumerable<RoomTypeView>> GetRoomTypeByPrice(double minPrice, double maxPrice)
-        {
-            var roomTypes = await _roomTypesService.GetRoomTypesByPrice(minPrice, maxPrice);
+        //[Route("api/roomTypes/price/{minPrice}/{maxPrice}")]
+        //[HttpGet]
+        //public async Task<IEnumerable<RoomTypeView>> GetRoomTypeByPrice(double minPrice, double maxPrice)
+        //{
+        //    var roomTypes = await _roomTypesService.GetRoomTypesByPrice(minPrice, maxPrice);
 
-            return _mapper.Map<IEnumerable<RoomTypeDTO>, IEnumerable<RoomTypeView>>(roomTypes);
-        }
+        //    return _mapper.Map<IEnumerable<RoomTypeDTO>, IEnumerable<RoomTypeView>>(roomTypes);
+        //}
 
         [Route("api/roomTypes")]
         [HttpPost]
