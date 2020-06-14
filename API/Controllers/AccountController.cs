@@ -72,5 +72,6 @@ namespace API.Controllers
             var user = await _userManager.FindByEmailAsync(email.ToUpper());
             return user;
         }
+
     }
 }

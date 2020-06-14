@@ -26,12 +26,6 @@ namespace BLL.Services
             return _mapper.Map<RoomType, RoomTypeDTO>(roomType);
         }
 
-        //public async Task<IEnumerable<RoomTypeDTO>> GetRoomTypesByPrice(double minPrice, double maxPrice)
-        //{
-        //    var roomTypes = await _uow.RoomTypes.Find(rt => rt.Price >= minPrice && rt.Price <= maxPrice);
-        //    return _mapper.Map<IEnumerable<RoomType>, IEnumerable<RoomTypeDTO>>(roomTypes);
-
-        //}
         public async Task<IEnumerable<RoomTypeDTO>> GetAllRoomTypes()
         {
             var roomTypes = await _uow.RoomTypes.GetAll();
